@@ -1,0 +1,19 @@
+body {
+  background-color: #979BBA !important;
+}
+
+body, p, h1, h2, h3, span {
+  color: #ffffff !important;
+}
+
+button {
+  background-color: #AFCEF0 !important; 
+  color: white !important; 
+  border-radius: 6px !important; 
+  border: none !important;
+}
+
+button:hover {
+  background-color: #357ABD !important; 
+  cursor: pointer;
+}
