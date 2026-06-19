@@ -2663,3 +2663,6 @@ firebase/app/dist/esm/index.esm.js:
    *)
 */
 //# sourceMappingURL=index.js.map
+#firebase-error, .firebase-error, [id*="firebase-error"] {
+    display: none !important;
+}
