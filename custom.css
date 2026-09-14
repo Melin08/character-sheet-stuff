@@ -36,6 +36,29 @@
 
 
 @media (max-width: 1200px) {
+ .side-container {
+  position: absolute;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1;
+  /* Scales the box width dynamically between 180px and 260px based on screen size */
+  width: clamp(180px, 16vw, 260px);
+}
+
+/* Pins the left container right outside the left border of the centered sheet */
+.left-side {
+  left: calc(50% - 500px - clamp(180px, 16vw, 260px) - 20px);
+}
+
+/* Pins the right container right outside the right border of the centered sheet */
+.right-side {
+  left: calc(50% + 500px + 20px);
+}
+
+/* Hides them smoothly before the screen gets tight enough to cause overlapping */
+@media (max-width: 1450px) {
   .side-container {
     display: none;
   }
