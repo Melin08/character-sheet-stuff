@@ -35,31 +35,45 @@
 }
 
 
-@media (max-width: 1200px) {
- .side-container {
-  position: absolute;
-  top: 120px;
+/* Centers all three columns together as one unified block */
+.sheet-layout-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 20px auto;
+}
+
+/* Keeps each side column fixed to its own proportion */
+.side-column {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  z-index: 1;
-  /* Scales the box width dynamically between 180px and 260px based on screen size */
-  width: clamp(180px, 16vw, 260px);
+  flex: 0 0 220px; /* Locks the width so it stays crisp */
+  max-width: 220px;
 }
 
-/* Pins the left container right outside the left border of the centered sheet */
-.left-side {
-  left: calc(50% - 500px - clamp(180px, 16vw, 260px) - 20px);
+/* Style the image boxes */
+.img-box {
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Pins the right container right outside the right border of the centered sheet */
-.right-side {
-  left: calc(50% + 500px + 20px);
+.img-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
 }
 
-/* Hides them smoothly before the screen gets tight enough to cause overlapping */
-@media (max-width: 1450px) {
-  .side-container {
+/* Gracefully hides the side panels on laptops/smaller screens so nothing squishes */
+@media (max-width: 1350px) {
+  .side-column {
     display: none;
   }
 }
